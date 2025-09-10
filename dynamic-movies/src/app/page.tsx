@@ -53,7 +53,6 @@ export default function Home() {
               alt={movie.title}
             />
             <Link
-              // href={`/movies/${movie.id}`
               href="/movies"
               className="text-xl font-bold text-blue-400 hover:text-blue-600"
             >
