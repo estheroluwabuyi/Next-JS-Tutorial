@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <div className="p-8 space-y-8 bg-gray-900 min-h-screen">
-      <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-6 rounded-xl shadow-lg">
+      <div className="bg-linear-to-r from-blue-500 to-indigo-600 p-6 rounded-xl shadow-lg">
         <h2 className="text-3xl font-semibold text-white mb-4 text-center">
           Dashboard Overview
         </h2>

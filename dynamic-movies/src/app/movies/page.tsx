@@ -12,7 +12,7 @@ export default function MoviePage() {
             <Image
               width={200}
               height={200}
-              className="w-full h-[300px] lg:h-[250px] rounded-[10px] mb-3"
+              className="w-full h-75 lg:h-62.5 rounded-[10px] mb-3"
               src={movie.poster}
               alt={movie.title}
             />
