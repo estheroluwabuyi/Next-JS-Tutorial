@@ -1,3 +1,6 @@
+import { Clock, Heart } from "lucide-react";
+import Link from "next/link";
+
 const songs = [
   {
     id: 1,
@@ -61,6 +64,54 @@ const songs = [
   },
 ];
 
-export default function SongsList() {
-  return <div>SongsList</div>;
+export default async function SongsList() {
+  await new Promise((resolve) =>
+    setTimeout(() => {
+      resolve("Content is currently loading.......");
+    }, 700),
+  );
+
+  return (
+    <div className="w-[96%] mx-auto px-4">
+      <h2 className="text-3xl text mt-8 font-bold mb-6 text-white">
+        Songs Collection
+      </h2>
+
+      <ul className="space-y-4">
+        {songs.map((song) => (
+          <Link href={`/musics/${song.id}`} key={song.id}>
+            <li className="flex items-center justify-between p-3 hover-bg-[#2A2929] rounded-md cursor-pointer transition-all duration-200 ease-in-out transform hover:scale-105">
+              <div className="flex items-center gap-5">
+                <img
+                  src="https://images.unsplash.com/photo-1782178394534-63204f8b83a4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1fHx8ZW58MHx8fHx8"
+                  alt="imag"
+                  height={4}
+                  width={4}
+                  className="h-16 w-16 bg-gray-700 rounded-md flex-shrink-0"
+                />
+
+                <div>
+                  <p className="text-white font-medium">{song.artist}</p>
+                  <p className="text-sm text-gray-400">{song.title}</p>
+                </div>
+              </div>
+
+              <div className="flex item-center gap-6 text-gray-400">
+                <div className="flex items-center gap-1">
+                  <Clock size={16} />
+                  <span>{song.time}</span>
+                </div>
+
+                <Heart
+                  size={16}
+                  className="cursor-pointer hover:text-red-500"
+                />
+                <button className="text-lg font-bold cursor-pointer">I</button>
+              </div>
+            </li>
+          </Link>
+        ))}
+      </ul>
+    </div>
+  );
 }

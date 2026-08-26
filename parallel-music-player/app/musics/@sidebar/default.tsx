@@ -1,12 +1,6 @@
 import { Clock, Home, TrendingUp } from "lucide-react";
 
-export default async function Sidebar() {
-  await new Promise((resolve) =>
-    setTimeout(() => {
-      resolve("Content is currently loading...");
-    }, 500),
-  );
-
+export default function Default() {
   return (
     <aside className="overflow-hidden w-64 bg-[#111111e5] text-white flx flex-col justify-between p-4 min-h-screen">
       <section>
